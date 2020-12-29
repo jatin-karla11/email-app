@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import EmailIcon from '@material-ui/icons/Email';
+import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,6 +34,18 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
 
+  function sendMail(e){
+    e.preventDefault();
+
+    emailjs.sendForm('service_e5usrmu', 'template_v5wxljq', e.target, 'user_xroQr6ZIIWa9kk1Frng9z')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -43,7 +56,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Send Email Web-App!
         </Typography>
-        <form className={classes.form} noValidate>
+        <form onSubmit={sendMail} className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -72,7 +85,7 @@ export default function SignIn() {
             variant="contained"
             className={classes.submit}
           >
-            Send Email to above entered email!
+            Send!
           </Button>
           
         </form>
