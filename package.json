@@ -2,7 +2,7 @@
   "name": "email_app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jatin-karla11.github.io/email-app",
+  "homepage": "http://jatin-karla11.github.io/email-app/",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
