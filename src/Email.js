@@ -9,8 +9,6 @@ import Container from '@material-ui/core/Container';
 import EmailIcon from '@material-ui/icons/Email';
 import emailjs from "emailjs-com";
 import Autocomplete from '@material-ui/lab/Autocomplete';
-// import 'react-phone-number-input/style.css'
-// import PhoneInput from 'react-phone-number-input'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
@@ -39,20 +37,20 @@ const useStyles = makeStyles((theme) => ({
   },
   subject:{
     minWidth: "100%",
-  },
-  PhoneInput:{
-    
   }
 }));
 
 export default function SignIn() {
   const classes = useStyles();
-  const [value, setValue] = useState();
-  const [subject, setSubject] = useState();
-
+  const [phone, setPhone] = useState();
+  // const [subject, setSubject] = useState();
+  // console.log(phone);
   function sendMail(e){
     e.preventDefault();
-    console.log(value);
+    console.log(e.target.name);
+    console.log(e.target.email);
+    console.log(e.target.phone);
+    console.log(e.target.subject)
     emailjs.sendForm('service_e5usrmu', 'template_v5wxljq', e.target, 'user_xroQr6ZIIWa9kk1Frng9z')
       .then((result) => {
           console.log(result.text);
@@ -96,24 +94,16 @@ export default function SignIn() {
             label="Email Address"
             name="email"
             autoComplete="email"
-            
+            type="email"
           /><br></br>
           <PhoneInput
-          className={classes.PhoneInput}
+            name="phone"
             placeholder="Enter phone number"
             country="in"
-            inputProps={{
-              
-              required: true,
-              countryCodeEditable:false
-            }}
+            value={phone}
+            onChange={(phone)=>setPhone(phone)}
+            autoComplete="phone"
             
-            value={value}
-            name="phone"
-            onChange={setValue}
-            containerStyle={{
-              
-            }}
             inputStyle={{
               width:"100%",
               height:"50px"
@@ -129,9 +119,10 @@ export default function SignIn() {
             style={{ width: 300 }}
             renderInput={(params) => <TextField
               name="subject"
-              value={subject}
-              onChange={setSubject}
-              {...params} label="Combo box" variant="outlined" />}
+              autoComplete="subject"
+              // value={subject}
+              // onChange={setSubject}
+              {...params} label="Subject" variant="outlined" />}
     />
           <Button
             type="submit"
