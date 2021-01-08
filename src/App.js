@@ -5,28 +5,28 @@ import About from './About';
 import Header from './Header';
 import UpForm from './UpForm';
 import Transform from './Transform';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [navbar,setNavbar]=useState(false);
+  // const [navbar,setNavbar]=useState(false);
 
-  const changeNav=()=>{
-    // console.log(window.scrollY);
-    if(window.scrollY>=100){
-      setNavbar(true);
-    }
-    else{
-      setNavbar(false);
-    }
-    // var scrolled = document.scrollingElement.scrollTop;
-    // console.log(scrolled)
-    // if (scrolled >= 120) {
-    //   setNavbar(true);
-    // } else {
-    //   setNavbar(false);
-    // }
-  }
+  // const changeNav=()=>{
+  //   // console.log(window.scrollY);
+  //   if(window.scrollY>=100){
+  //     setNavbar(true);
+  //   }
+  //   else{
+  //     setNavbar(false);
+  //   }
+  //   // var scrolled = document.scrollingElement.scrollTop;
+  //   // console.log(scrolled)
+  //   // if (scrolled >= 120) {
+  //   //   setNavbar(true);
+  //   // } else {
+  //   //   setNavbar(false);
+  //   // }
+  // }
 
   // function scrollFunction() {
   //   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -38,14 +38,60 @@ function App() {
   //   }
   // }
 
-  window.addEventListener('scroll',changeNav);
+  // window.addEventListener('scroll',changeNav);
+
+  useEffect(() => {
+    
+    const handleScroll = () => {
+      console.log(window.scrollY)
+      if (window.scrollY > 200) {
+        document.querySelector(".navbar").className = "navbar scroll";
+        document.querySelector(".boom").className = "boom";
+      } else {
+        
+        document.querySelector(".navbar").className = "navbar";
+        document.querySelector(".boom").className = "boom hide";
+      }
+    };
+    handleScroll();
+    window.addEventListener('scroll',handleScroll);
+    
+  }, [])
+
+  
+
+
 
   return (
     <div className="App">
-      {navbar?<><UpForm/></>:<><Header/></>}
-      {/* <Header id="header"/>
-      <UpForm id="upform"/>
-       */}
+      
+
+<nav className="navbar">
+  <ul>
+      <button>🞬</button>
+    <li> 
+      
+      <a href="#aboutMe"> About Me </a>
+    </li>
+    <li>
+      
+       <a href="#projects"> Projects </a>
+    </li>
+    <li>
+      
+      <a href="#cv"> CV </a>
+    </li>
+    <li>
+      
+      <a href="#contacts"> Contacts </a>
+    </li>
+  </ul>
+</nav>
+
+       {/* <UpForm className="boom"/> */}
+       <div className="boom" style={{top:"0",backgroundColor:"black",height:"200px",position:"fixed",width:"100%",zIndex:"10"}}></div>
+
+
       <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
