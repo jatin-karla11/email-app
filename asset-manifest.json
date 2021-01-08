@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/email-app/static/css/main.c558dd90.chunk.css",
-    "main.js": "/email-app/static/js/main.b2c0559b.chunk.js",
-    "main.js.map": "/email-app/static/js/main.b2c0559b.chunk.js.map",
+    "main.css": "/email-app/static/css/main.4033667d.chunk.css",
+    "main.js": "/email-app/static/js/main.47ddeb12.chunk.js",
+    "main.js.map": "/email-app/static/js/main.47ddeb12.chunk.js.map",
     "runtime-main.js": "/email-app/static/js/runtime-main.363de14e.js",
     "runtime-main.js.map": "/email-app/static/js/runtime-main.363de14e.js.map",
     "static/css/2.2bbe33c5.chunk.css": "/email-app/static/css/2.2bbe33c5.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.f65bb420.chunk.js.map": "/email-app/static/js/3.f65bb420.chunk.js.map",
     "index.html": "/email-app/index.html",
     "static/css/2.2bbe33c5.chunk.css.map": "/email-app/static/css/2.2bbe33c5.chunk.css.map",
-    "static/css/main.c558dd90.chunk.css.map": "/email-app/static/css/main.c558dd90.chunk.css.map",
+    "static/css/main.4033667d.chunk.css.map": "/email-app/static/css/main.4033667d.chunk.css.map",
     "static/js/2.9c6d7d6f.chunk.js.LICENSE.txt": "/email-app/static/js/2.9c6d7d6f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.363de14e.js",
     "static/css/2.2bbe33c5.chunk.css",
     "static/js/2.9c6d7d6f.chunk.js",
-    "static/css/main.c558dd90.chunk.css",
-    "static/js/main.b2c0559b.chunk.js"
+    "static/css/main.4033667d.chunk.css",
+    "static/js/main.47ddeb12.chunk.js"
   ]
 }
