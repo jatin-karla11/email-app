@@ -1,4 +1,6 @@
+import { Button } from '@material-ui/core';
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
 import './Question.css'
 
 export default function Question() {
@@ -72,7 +74,9 @@ export default function Question() {
 					You scored {score} out of {questions.length}
 				</div>
 			):<></>}
-        </div></>
+        </div>
+        <Button style={{width:"200px"}} variant="contained"><Link to="/">go to home page!</Link></Button>
+        </>
         :
         <>
             <div className='question'>
