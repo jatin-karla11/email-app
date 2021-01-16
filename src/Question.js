@@ -54,7 +54,8 @@ export default function Question() {
             return;
         }
         if (isCorrect) {
-			setScore(score + 1);
+            setScore(score + 1);
+            
 		}
 
 		const nextQuestion = currentQuestion + 1;
@@ -94,7 +95,9 @@ export default function Question() {
 					</div>
 					<div className='answer-section'>{score===3?<>
                         <input type="text"/>
-                        <button onClick={()=>setEnd(true)} type="submit">Submit</button>
+                        <button onClick={()=>{setEnd(true) 
+                            
+                            setShowScore(true)}} type="submit">Submit</button>
                     </>:<>
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button style={{color:"white"}} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
