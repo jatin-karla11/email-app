@@ -11,6 +11,7 @@ import emailjs from "emailjs-com";
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -134,6 +135,7 @@ export default function SignIn() {
           </Button>
           
         </form>
+        <Link to="/question"><Button variant="contained">Questions Page!</Button></Link>
       </div>
     </Container>
     

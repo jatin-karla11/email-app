@@ -1,7 +1,7 @@
 import './App.css';
 import {Redirect, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
+import Question from './Question';
 import Header from './Header';
 import UpForm from './UpForm';
 import Transform from './Transform';
@@ -82,7 +82,7 @@ function App() {
 
       <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
+                <Route exact path="/question" component={Question} />
                 <Redirect to="/" />
                 
       </Switch>
