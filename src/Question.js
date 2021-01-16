@@ -65,7 +65,7 @@ export default function Question() {
 	return (
         <>
         {end?
-        <><div className="endQuiz"><strong>Quiz ended since you entered wrong answer!</strong>
+        <><div className="endQuiz"><strong>Quiz ended!</strong>
         <br></br>
         {showScore ? (
 				<div className='score-section'>
@@ -90,9 +90,10 @@ export default function Question() {
 					</div>
 					<div className='answer-section'>{score===3?<>
                         <input type="text"/>
+                        <button onClick={()=>setEnd(true)} type="submit">Submit</button>
                     </>:<>
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							<button style={{color:"white"}} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
                     </>}
 						
